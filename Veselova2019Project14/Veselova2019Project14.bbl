@@ -1,3 +1,9 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{bb86866}
+V.~K. Jirsa, K.~J. Jantzen, A.~Fuchs, and J.~A.~S. Kelso.
+\newblock Spatiotemporal forward solution of the {EEG} and {MEG} using network
+  modeling.
+\newblock {\em IEEE Trans. Medical Imaging}, 21(5):493--504, May 2002.
 
 \end{thebibliography}
