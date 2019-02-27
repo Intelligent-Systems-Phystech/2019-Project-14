@@ -6,6 +6,11 @@ Georgy Derevyanko, Sergei Grudinin, Yoshua Bengio, and Guillaume Lamoureux.
   folds}.
 \newblock {\em ArXiv e-prints}, 2018.
 
+\bibitem{conf/siggraph/KazhdanF02}
+Michael Kazhdan and Thomas~A. Funkhouser.
+\newblock Harmonic 3d shape matching.
+\newblock In {\em SIGGRAPH Abstracts and Applications}, page 191. ACM, 2002.
+
 \bibitem{Lenc18}
 Karel Lenc and Andrea Vedaldi.
 \newblock {Understanding Image Representations by Measuring Their Equivariance
