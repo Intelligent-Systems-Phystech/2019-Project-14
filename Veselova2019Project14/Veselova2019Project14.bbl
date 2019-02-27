@@ -17,6 +17,12 @@ Niloy~J. Mitra, Leonidas Guibas, and Mark Pauly.
 \newblock {Partial and Approximate Symmetry Detection for 3D Geometry}.
 \newblock {\em ACMTG: ACM Transactions on Graphics}, 25, 2006.
 
+\bibitem{journals/cagd/MousaCAG08}
+Mohamed-Hamed Mousa, Rapha{\"e}lle Chaine, Samir Akkouche, and Eric Galin.
+\newblock Toward an efficient triangle-based spherical harmonics representation
+  of 3d objects.
+\newblock {\em Computer Aided Geometric Design}, 25(8):561--575, 2008.
+
 \bibitem{DeepSymmetry18}
 Guillaume Pag{\`e}s and Sergei Grudinin.
 \newblock {DeepSymmetry: Using 3D convolutional networks for identification of
