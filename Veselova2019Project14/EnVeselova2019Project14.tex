@@ -1,0 +1,61 @@
+\documentclass[12pt,twosides]{article}
+\usepackage{jmlda}
+%\NOREVIEWERNOTES
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+
+\title
+[Detection of tandem repeats in proteins]
+{Deep Learning for reliable detection of tandem repeats in 3D protein structures.}
+\author
+[Veselova~Eugenia] 
+{Veselova~Eugenia$^1$} 
+% [] список авторов, выводимый в заголовок; не нужен, если он не отличается от основного
+\thanks
+{Task stated by:  Grudinin~S.
+	Consultant:  Pages G.}
+\email
+{veselova.er@phystech.edu}
+\organization
+{$^1$Moscow Institute of Physics and Technology (MIPT)}
+\abstract
+{Understanding of protein functions demands feasibility to robustly detect symmetry and repetitions in protein structure. This article presents an improved convolutional neural network (CNN) for tandem repeats detection, that is equivariant to rigid input motions --- each layer for every $SE(3)$ transformation of 3D input returns output, transformed with the same motion. Equivariance is provided by replacing regular CNN filters with linear combinations of a complete steerable filter basis, consisting of spherical harmonics. This replacement is expected to improve accuracy of tandem repeats detection.
+	
+\bigskip
+\textbf{Keywords}: \emph {CNN, spherical harmonics, tandem repeats, 3D objects}.}
+
+	\titleEng
+	{JMLDA paper example: file jmlda-example.tex}
+	\authorEng
+	{Author~F.\,S.$^1$, CoAuthor~F.\,S.$^2$, Name~F.\,S.$^2$}
+	\organizationEng
+	{$^1$Organization; $^2$Organization}
+	\abstractEng
+	{This document is an example of paper prepared with \LaTeXe\
+		typesetting system and style file \texttt{jmlda.sty}.
+	
+	\bigskip
+	\textbf{Keywords}: \emph{keyword, keyword, more keywords}.}
+
+\begin{document}
+	\maketitle
+	%\linenumbers
+	
+	\section{Введение}
+	Машинное обучение широко применяется в задачах современных естественных наук, в частности в задачах структурной биологии. Большая часть получаемых на практике белков обладает повтояющимися элементами структуры или симметрией, которые влияют на функции белков и позволяют исследовать их эволюцию. Нахождение симметрий и повторов является важной задачей, решённой с помощью классических методов машинного обучения в 2006 году \cite{MitGuiPau06}, поэтому особый интерес представляет применение методов глубокого обучения и свёрточных нейросетей (CNN --- convolutional neural network), которые позволяют получать на нижних уровнях сети легко интерпретируемые характерные черты изучаемых объектов. 
+	
+	Предсказание трёхмерной структуры белка по его аминокислотному составу \cite{BioCNN18} и детектирование тандемных повторов и внутренних симметрий с высокой точностью решается свёрточными нейросетями \cite{DeepSymmetry18}, однако существующие свёрточные нейросети не имеют возможности одинаково качественно обрабатывать входные данные при любых поворотах и сдвигах. Основная цель работы состоит в адаптации построенных нейросетей для выявления повторов и симметрий к различным преобразованиям входных данных. 
+	
+	Если трансляция входного объекта при обработке свёрточной нейросетью даёт пропорционально транслированную карту характеристик \cite{Lenc18}, то для вращений входного объекта подобное свойство не реализуется. Искомое свойство переноса преобразования входных данных на выходные называется эквивариантностью. Кроме того, сохраняющаяся во всех слоях нейросети эквивариантность позволяет отслеживать свойства исследуемых структур уже на нижних уровнях нейросети. 2D CNN, относительно которой данные были бы эквивариантны, была реализована заменой стандартных свёрточных фильтров на комплексные круговые гармоники (circular harmonics), обеспечивающие вращательную эквивариантность без необходимости использовать сильную аугментацию данных \cite{conf/cvpr/WorrallGTB17}. Трёхмерной интерпретацией данного подхода являются сферические гармоники. Первоначально идея сферических гармоник была развита в моделировании для эффективного представления и определения степени схожести поверхностей трёхмерных объектов\cite{conf/siggraph/KazhdanF02, journals/cagd/MousaCAG08}. Далее идея была применена к анализу трёхмерных признаковых карт с помощью CNN. При замене стандартных трёхмерных свёрточных фильтров на линейную комбинацию аналитически определённого вращательного базиса из сферических гармоник CNN становится эквивариантна относительно любого преобразования из группы симметрий $SE(3)$\cite{DBLP:journals/corr/abs-1807-02547}.
+	
+	Любое движение $g\in SE(3)$ представимо как комбинация вращения $r\in SO(3)$ и трансляции $t\in\mathbb{R}^3$. При рассмотрении одного уровня свёрточной нейросети с $K$ трёхмерных признаковых карт, соответствие между входом и выходом слоя может быть записано как $f:\mathbb{R}^3\rightarrow\mathbb{R}^K$. Оператор трансляции выходного векторного поля легко описывается как $t:(x-t)\mapsto x$. Вращение описывается более сложным образом, так как при повороте всей каждый вектор меняет свою позицию и поворачивается с помощью матрицы $\rho(r)$. Поэтому оператор вращения $\pi(r)$ определяется как $[\pi(r)f](x):=\rho(r)f(r^{-1}x)$, где $r^{-1}x$ описывает перемещение векторов на новые позиции. Таким образом, $g=tr$ представимо как $[\pi(tr)f](x):=\rho(r)f(r^{-1}(x-t))$. Обобщая полученные выкладки на CNN, выражение свёрточного фильтра между $n$ и $n+1$ слоями нейросети через базис в пространстве эквивариантных преобразований между пространствами признаков $\mathcal{F}_n$ и $\mathcal{F}_{n+1}$ позволяет гарантировать, что любое преобразование входа слоя будет давать такое же преобразование выхода, т.е. обеспечивать эквивариантность. Кроме того, в силу одинакового изменения всех трёх RGB матриц изображения при рассматриваемых преобразованиях полученное представление может быть перенесено и на цветные изображения.
+	
+	Именно поэтому в качестве решения поставленной задачи в статье предложена эффективная имплементация сферических гармоник в существующую CNN модель выделения тандемных повторов и симметрий в белках для получения идентичных результатов при любых вращениях исходных карт атомных плотностей белковых 3D моделей \cite{DeepSymmetry18}. В качестве входных данных выступает синтетический датасет, полученный <<симметризацией>> белковых структур датасета Top8000\footnote{ http://kinemage.biochem.duke.edu/databases/top8000.php}, состоящий из карт плотностей размеров $24\times24\times24$. 
+	
+	\section{Вывод}
+	
+	\bibliographystyle{plain}
+	\bibliography{Veselova2019Project14}
+	
+\end{document}
+

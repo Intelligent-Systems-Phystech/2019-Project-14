@@ -1,0 +1,49 @@
+\begin{thebibliography}{1}
+
+\bibitem{BioCNN18}
+Georgy Derevyanko, Sergei Grudinin, Yoshua Bengio, and Guillaume Lamoureux.
+\newblock {Deep convolutional networks for quality assessment of protein
+  folds}.
+\newblock {\em ArXiv e-prints}, 2018.
+
+\bibitem{conf/siggraph/KazhdanF02}
+Michael Kazhdan and Thomas~A. Funkhouser.
+\newblock Harmonic 3d shape matching.
+\newblock In {\em SIGGRAPH Abstracts and Applications}, page 191. ACM, 2002.
+
+\bibitem{Lenc18}
+Karel Lenc and Andrea Vedaldi.
+\newblock {Understanding Image Representations by Measuring Their Equivariance
+  and Equivalence}.
+\newblock {\em International Journal of Computer Vision}, 2018.
+
+\bibitem{MitGuiPau06}
+Niloy~J. Mitra, Leonidas Guibas, and Mark Pauly.
+\newblock {Partial and Approximate Symmetry Detection for 3D Geometry}.
+\newblock {\em ACMTG: ACM Transactions on Graphics}, 25, 2006.
+
+\bibitem{journals/cagd/MousaCAG08}
+Mohamed-Hamed Mousa, Rapha{\"e}lle Chaine, Samir Akkouche, and Eric Galin.
+\newblock Toward an efficient triangle-based spherical harmonics representation
+  of 3d objects.
+\newblock {\em Computer Aided Geometric Design}, 25(8):561--575, 2008.
+
+\bibitem{DeepSymmetry18}
+Guillaume Pag{\`e}s and Sergei Grudinin.
+\newblock {DeepSymmetry: Using 3D convolutional networks for identification of
+  tandem repeats and internal symmetries in protein structures}.
+\newblock working paper or preprint, 2018.
+
+\bibitem{DBLP:journals/corr/abs-1807-02547}
+Maurice Weiler, Mario Geiger, Max Welling, Wouter Boomsma, and Taco Cohen.
+\newblock {3D Steerable CNNs: Learning Rotationally Equivariant Features in
+  Volumetric Data}.
+\newblock {\em CoRR}, abs/1807.02547, 2018.
+
+\bibitem{conf/cvpr/WorrallGTB17}
+Daniel~E. Worrall, Stephan~J. Garbin, Daniyar Turmukhambetov, and Gabriel~J.
+  Brostow.
+\newblock {Harmonic Networks: Deep Translation and Rotation Equivariance}.
+\newblock In {\em CVPR}, pages 7168--7177. IEEE Computer Society, 2017.
+
+\end{thebibliography}
