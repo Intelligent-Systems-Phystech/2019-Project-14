@@ -29,14 +29,14 @@
 	\maketitle
 	%\linenumbers
 	
-	\section{Введение}
+	\section{Introduction}
 	Currently deep learning is widely applied in the natural sciences, particulary in the structural biology tasks. Many existing proteins have repeating structural elements or symmetries, which affect proteins properties. Detecting such repetitions and axes of symmetry was solved through conventional machine learning methods \cite{MitGuiPau06}, hence we are interested in applying automated deep learning approaches, e.g. convolutional neural networks, which contain easily interpreted objects features at their deepest level.
 
 	Prediction of three-dimensional protein structure from its amino-acid chain \cite{BioCNN18} and structural repetitions and internal symmetries detection are efficiently implemented by virtue of convolutional neutal networks \cite{DeepSymmetry18}. However, existing CNNs are not stable and equivariant to rigid input data motions. Therefore we are aimed at adapting already built networks for repetitions and symmetries detection to input transformations.
 	
-	While translation of the input object after CNN processing returns proportionally translated features map \cite{Lenc18}, rotation of the input object does not have the same property. Furthermore, in case of persisting equivariance at each level, specific object features may be noticed even at the deepest levels. Equivariant 2D CNN was implemented with replacing CNN regular filters with linear combination of \item{circular harmonics}, providing rotational equivariance without need in strong data augmentation \cite{conf/cvpr/WorrallGTB17}. 
+	While translation of the input object after CNN processing returns proportionally translated features map \cite{Lenc18}, rotation of the input object does not have the same property. Furthermore, in case of persisting equivariance at each level, specific object features may be noticed even at the deepest levels. Equivariant 2D CNN was implemented with replacing CNN regular filters with linear combination of \textit{circular harmonics}, providing rotational equivariance without need in strong data augmentation \cite{conf/cvpr/WorrallGTB17}. 
 	
-	Three-dimensional interpretation of such approach are \it{spherical harmonics}.
+	Three-dimensional interpretation of such approach are \textit{spherical harmonics}.
 	
 	 Трёхмерной интерпретацией данного подхода являются сферические гармоники. Первоначально идея сферических гармоник была развита в моделировании для эффективного представления и определения степени схожести поверхностей трёхмерных объектов\cite{conf/siggraph/KazhdanF02, journals/cagd/MousaCAG08}. Далее идея была применена к анализу трёхмерных признаковых карт с помощью CNN. При замене стандартных трёхмерных свёрточных фильтров на линейную комбинацию аналитически определённого вращательного базиса из сферических гармоник CNN становится эквивариантна относительно любого преобразования из группы симметрий $SE(3)$\cite{DBLP:journals/corr/abs-1807-02547}.
 	
