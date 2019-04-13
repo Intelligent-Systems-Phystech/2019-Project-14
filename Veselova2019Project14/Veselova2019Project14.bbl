@@ -1,10 +1,15 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{BioCNN18}
 Georgy Derevyanko, Sergei Grudinin, Yoshua Bengio, and Guillaume Lamoureux.
 \newblock {Deep convolutional networks for quality assessment of protein
   folds}.
 \newblock {\em ArXiv e-prints}, 2018.
+
+\bibitem{DBLP:journals/corr/HeZRS15}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep residual learning for image recognition.
+\newblock {\em CoRR}, abs/1512.03385, 2015.
 
 \bibitem{conf/siggraph/KazhdanF02}
 Michael Kazhdan and Thomas~A. Funkhouser.
@@ -28,11 +33,30 @@ Mohamed-Hamed Mousa, Rapha{\"e}lle Chaine, Samir Akkouche, and Eric Galin.
   representation of 3D objects}.
 \newblock {\em Computer Aided Geometric Design}, 25(8):561--575, 2008.
 
+\bibitem{pages:hal-01816449}
+Guillaume Pag{\`e}s and Sergei Grudinin.
+\newblock {Analytical symmetry detection in protein assemblies. II. Dihedral
+  and Cubic symmetries}.
+\newblock {\em {Journal of Structural Biology}}, 203(3):185--194, September
+  2018.
+
 \bibitem{DeepSymmetry18}
 Guillaume Pag{\`e}s and Sergei Grudinin.
 \newblock {DeepSymmetry: Using 3D convolutional networks for identification of
   tandem repeats and internal symmetries in protein structures}.
 \newblock working paper or preprint, 2018.
+
+\bibitem{pages:hal-01779893}
+Guillaume Pag{\`e}s, Elvira Kinzina, and Sergei Grudinin.
+\newblock {Analytical symmetry detection in protein assemblies. I. Cyclic
+  symmetries}.
+\newblock {\em {Journal of Structural Biology}}, 203(2):142--148, August 2018.
+
+\bibitem{DBLP:journals/corr/VeitWB16}
+Andreas Veit, Michael~J. Wilber, and Serge~J. Belongie.
+\newblock Residual networks are exponential ensembles of relatively shallow
+  networks.
+\newblock {\em CoRR}, abs/1605.06431, 2016.
 
 \bibitem{DBLP:journals/corr/abs-1807-02547}
 Maurice Weiler, Mario Geiger, Max Welling, Wouter Boomsma, and Taco Cohen.
@@ -45,5 +69,10 @@ Daniel~E. Worrall, Stephan~J. Garbin, Daniyar Turmukhambetov, and Gabriel~J.
   Brostow.
 \newblock {Harmonic Networks: Deep Translation and Rotation Equivariance}.
 \newblock In {\em CVPR}, pages 7168--7177. IEEE Computer Society, 2017.
+
+\bibitem{DBLP:journals/corr/ZagoruykoK16}
+Sergey Zagoruyko and Nikos Komodakis.
+\newblock Wide residual networks.
+\newblock {\em CoRR}, abs/1605.07146, 2016.
 
 \end{thebibliography}
